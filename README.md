@@ -1,2 +1,2 @@
 # txrworld.github.io
-EM DESENVOLVIMENTO!
+Em desenvolvimento!
