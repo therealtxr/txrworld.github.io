@@ -1,0 +1,1064 @@
+* {
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body:not(.sub-page) {
+  font-family: 'Trade Winds', sans-serif;
+  background-image: url('studio.jpg.png');
+  background-size: cover;
+  background-position: center -300px;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  
+}
+
+body.sub-page {
+  background: white;
+
+
+}
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 10;
+}
+
+
+
+.logo {
+
+  height: 70px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.nav-item {
+  color: white;
+  font-size: 15px; /* tamanho menor */
+  font-weight: 800;
+  text-decoration: none;
+  font-family: 'Trade Winds', cursive !important;
+}
+body {
+  overflow-x: hidden;
+}
+
+body:not(.sub-page)::before {
+
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('studio.jpg.png');
+  background-size: cover;
+  background-position: center center;
+  filter: url(#wave);
+  z-index: -1;
+  
+} 
+
+body.sub-page {
+  background-image: url('fundo\ novo\ pra\ sub.jpeg');
+  background-size: cover;       /* ou 'contain' ou até '100% auto' */
+  background-position: flex-start; /* <-- aqui */  /* ou 'top', 'bottom', etc */
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  height: 220vh;
+
+}
+.beat-player {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.beat-player h2 {
+  font-size: 1.5rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+audio {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #003300;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #005500;
+}@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+.beat-section {
+  padding: 140px 40px 60px;
+}
+
+.section-title {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+   margin-top: 0px; /* <- diminui isso */
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 700;
+}
+
+.beat-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.beat-card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 8px #003300;
+  border: 1px solid #00ff7f20; /* verde translúcido */
+  box-shadow: 0 0 10px #00ff7f30;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #00ff7f80;
+
+}
+    .beat-card {
+      position: relative; /* necessário pro ::before funcionar */
+      overflow: hidden;
+    }
+    
+    .beat-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#00ff7f20 1px, transparent 1px),
+                        linear-gradient(90deg, #00ff7f20 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+      pointer-events: none;
+    }
+  
+
+
+.beat-name {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 300;
+}
+
+.credit {
+  margin-top: 10px;
+  color: #00cc66;
+  font-size: 14px;
+  font-family: 'Cal Sans', sans-serif;
+  font-weight: 300;
+}
+
+.waveform {
+  width: 100%;
+  height: 60px;
+}
+
+.download-button {
+  font-size: 20px;
+  color: #00cc66;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: transform 0.2s;
+}
+
+.download-button:hover {
+  transform: scale(1.2);
+}
+.substancias-box {
+  border: 2px solid #004d26; /* verde escuro */
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.substancias-box:hover {
+  background-color: #004d26;
+  color: white;
+}
+.substancias-static {
+  border: 2px solid #004d26;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: none;
+  pointer-events: none;
+  cursor: default;
+}
+/* Estilo da logo na página substancias: borda invisível + hover verde escuro */
+body.sub-page .logo {
+  padding: -10px;
+  border: -10px solid transparent;
+  border-radius: 50%;
+  background-clip: padding-box;
+  width: 100px; /* compensando o padding */
+  height: 70px; /* compensando o padding */
+  transition: background-color 0.3s ease;
+}
+
+body.sub-page .logo:hover {
+  background-color: #004d26;
+}
+
+@keyframes subtleMove {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 80px;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+body.sub-page {
+  will-change: background-position;
+  background: url('fundo\ novo\ pra\ sub.jpeg') no-repeat center;
+  background-size: cover;
+  animation: subtleMove 18s infinite ease-in-out;
+  font-family: 'Trade Winds', sans-serif;
+  padding-top: 50px;
+}
+.nav-item.samples {
+  border: 2px solid #004172; /* tom de azul escuro da imagem */
+  padding: 8px 16px;
+  font-family: 'Trade Winds', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 15px;         /* tamanho maior só no Samples */
+  border-color: #004172;   /* cor da linha específica */
+  color: #ffffff;          /* cor do texto específica (exemplo em azul claro) */
+  margin-left: 17px; /* aumenta o espaçamento à esquerda */
+
+}
+
+.nav-item.samples:hover {
+  background-color: #004172;
+  color: white;
+}
+.hero-text {
+  position: absolute;
+  top: 235px;
+  left: 80px;
+  max-width: 600px;
+  color: white;
+  font-family: 'Turret Road', sans-serif;
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: 80px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.hero-description {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  
+
+}
+.hero-title {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background: linear-gradient(110deg, white, #004d26, white);
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 5s linear infinite;
+  
+  
+}
+ 
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
+.content-section {
+  color: white; /* ou outra que contraste bem com seu fundo */
+  padding: 40px 20px;
+  width: 1000px;
+  margin: 10 auto;
+  font-family: 'Turret Road', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  left: 80px;
+  margin-left: 90px
+
+}
+.section-subtitle {
+  margin-top: 200px;
+  font-size: 45px;
+  color: white;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-left: 407px; /* ou qualquer valor que encaixe */
+  
+  
+}
+.samples-subtitle {
+  margin-top: 5rem; /* ou o valor que ficou bom pra você */
+  font-size: 45px;
+  color: white;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-left: -70px; /* ou qualquer valor que encaixe */
+}
+.text-samples {
+  color: white; /* ou outra que contraste bem com seu fundo */
+  padding: 40px 20px;
+  width: 1000px;
+  margin: 10 auto;
+  font-family: 'Turret Road', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  left: 80px;
+  margin-left: -23px
+}
+.text-tomebpm {
+  color: white; /* ou outra que contraste bem com seu fundo */
+  padding: 40px 20px;
+  width: 1000px;
+  margin: 10 auto;
+  font-family: 'Turret Road', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  left: 80px;
+  margin-left: -23px
+}
+.tomebpm-subtitle {
+  margin-top: 2rem; /* ou o valor que ficou bom pra você */
+  font-size: 45px;
+  color: white;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-left: -70px; /* ou qualquer valor que encaixe */
+}
+.text-conversaoaudioemmidi {
+  color: white; /* ou outra que contraste bem com seu fundo */
+  padding: 40px 20px;
+  width: 1000px;
+  margin: 10 auto;
+  font-family: 'Turret Road', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+  left: 80px;
+  margin-left: -23px
+}
+.conversaoaudioemmidi-subtitle {
+  margin-top: 5rem; /* ou o valor que ficou bom pra você */
+  font-size: 45px;
+  color: white;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin-left: -40px; /* ou qualquer valor que encaixe */
+}
+.site-footer {
+  background-color: #000;
+  padding: 95px 40px 40px 40px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  position: relative;
+  margin-top: 2000px; /* ou mais, depende do conteúdo acima */
+  
+  
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  flex-wrap: wrap;
+  margin-left: 300px; /* aqui você empurra pra direita */
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-right: 40px;
+  margin-left: 40px; /* ajuste o valor como quiser */
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.instagram-icon {
+  width: 24px;
+  height: 24px;
+ 
+  transition: 0.3s;
+}
+
+.instagram-icon:hover {
+  opacity: 0.7;
+}
+
+.footer-left {
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: white;
+}
+.footer-separator {
+  width: 1px;
+  background-color: #444;
+  margin: 0 20px;
+  transform: translateX(-130px);
+  
+}
+@keyframes pulse-wave {
+  0% { transform: scaleY(1); opacity: 0.7; }
+  50% { transform: scaleY(1.5); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0.7; }
+}
+
+.soundwave-icon {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-right: 20px;
+  margin-left: -20px; /* opcional para alinhar mais à esquerda */
+  height: 75px;
+  position: relative;
+  top: 30px;        /* move um pouco pra baixo */
+  left: -132px;      /* move mais pra esquerda */
+}
+
+
+.soundwave-icon div {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 100%;
+  background-color: #004d26;
+  animation: pulse-wave 2s infinite ease-in-out;
+
+}
+
+/* Aplicar delays diferentes para dar o efeito sequencial */
+.soundwave-icon div:nth-child(1) {
+  animation-delay: 0s;
+}
+.soundwave-icon div:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.soundwave-icon div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.soundwave-icon div:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.soundwave-icon div:nth-child(5) {
+  animation-delay: 0.6s;
+}
+.soundwave-icon div:nth-child(6) {
+  animation-delay: 0.75s;
+}
+body.samples-page {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('fundodesamples.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.sectiontrap {
+  margin-top: -50px;
+  padding:0px;
+  
+
+}
+.section-title2 {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  margin-top: -220px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 700;
+}
+
+.beat-gridtrap {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.beat-card2 {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 8px #003300;
+  border: 1px solid #00ff7f20; /* verde translúcido */
+  box-shadow: 0 0 10px #00ff7f30;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #00ff7f80;
+
+}
+    .beat-card2 {
+      position: relative; /* necessário pro ::before funcionar */
+      overflow: hidden;
+    }
+    
+    .beat-card2::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#00ff7f20 1px, transparent 1px),
+                        linear-gradient(90deg, #00ff7f20 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+      pointer-events: none;
+    }
+  
+    .beat-section, .sectiontrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 0rem 800 !important;
+      padding:170px !important;
+     
+    }
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000000cc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    
+    .modal-box {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 10px;
+      color: #ffffff;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    
+    .modal-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #222;
+      border: 1px solid #004d26;
+      border-radius: 5px;
+      color: #00cc66;
+    }
+    
+    .modal-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00cc66d8;
+      color: #000000;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .sectionafro {
+  margin-top: 130px;
+  padding:0px;
+  
+
+}
+.section-title3 {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  margin-top: -220px;
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 700;
+}
+
+.beat-gridafro {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.beat-card3 {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 8px #003300;
+  border: 1px solid #00ff7f20; /* verde translúcido */
+  box-shadow: 0 0 10px #00ff7f30;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #00ff7f80;
+
+}
+    .beat-card3 {
+      position: relative; /* necessário pro ::before funcionar */
+      overflow: hidden;
+    }
+    
+    .beat-card3::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(#00ff7f20 1px, transparent 1px),
+                        linear-gradient(90deg, #00ff7f20 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: 0;
+      pointer-events: none;
+    }
+  .site-footerafro {
+  background-color: #000;
+  width:100%;
+  padding: 78px 20px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  position: relative;
+  margin-top: 110px;
+}
+
+.footer-contentafro {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+
+}
+
+.footer-column2 {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px;
+}
+.footer-title2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-left:300px;
+}
+.footer-title3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-left:140px;
+}
+
+.footer-links2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+}
+
+.footer-links2 li {
+  margin-bottom: 10px;
+}
+
+.footer-links2 a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left:300px;
+  
+}
+
+.footer-links2 a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-right:115px;
+  
+}
+
+.instagram-icon2 {
+  width: 24px;
+  height: 24px;
+  transition: 0.3s;
+  margin-left:140px;
+}
+
+.instagram-icon2:hover {
+  opacity: 0.7;
+}
+
+.footer-left2 {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-separator2 {
+  width: 1px;
+  background-color: #444;
+
+  margin-top: 10px; /* estava 20px, agora está mais pra baixo */
+  margin-left: 45px; /* empurra a linha pra direita */
+}
+
+.soundwave-icon2 {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 75px;
+  margin-top: 45px;
+  transform: translateX(115px);
+}
+
+.soundwave-icon2 div {
+  width: 3px;
+  height: 100%;
+  background-color: #004d26;
+  animation: pulse-wave 2s infinite ease-in-out;
+}
+
+.soundwave-icon2 div:nth-child(1) { animation-delay: 0s; }
+.soundwave-icon2 div:nth-child(2) { animation-delay: 0.15s; }
+.soundwave-icon2 div:nth-child(3) { animation-delay: 0.3s; }
+.soundwave-icon2 div:nth-child(4) { animation-delay: 0.45s; }
+.soundwave-icon2 div:nth-child(5) { animation-delay: 0.6s; }
+.soundwave-icon2 div:nth-child(6) { animation-delay: 0.75s; }
+
+@keyframes pulse-wave {
+  0% { transform: scaleY(1); opacity: 0.7; }
+  50% { transform: scaleY(1.5); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0.7; }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  max-height: 100vh; /* limita a altura máxima à 80% da tela */
+  padding: 20px;
+  margin-top:20px;
+  background-color: #111; /* ou o fundo que preferir */
+  color: white;
+  font-family: 'Turret Road', sans-serif;
+  border-radius: 10px;
+}
+
+.license-text {
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+  padding:15px;
+}
+/* Estilização opcional da rolagem */
+.license-text::-webkit-scrollbar {
+  width: 6px;
+}
+.license-text::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
+}
+.download-button {
+  background: none;
+  border: none;
+  color: #00cc66; /* ou a cor que você usava antes */
+  font-size: 20px; /* ajuste como quiser */
+  cursor: pointer;
+  padding: 0;
+}
+.download-button:focus {
+  outline: none;
+}
+#agree-checkbox {
+  width: 20px;         /* aumenta o tamanho da caixa */
+  height: 20px;
+  margin-right: 5px;  /* espaço entre a caixa e o texto */
+  transform: translate(-5px, 4px); /* move um pouco pra esquerda e pra baixo */
+}
+.nav-item.tomebpm {
+  border: 2px solid #4b028f; /* tom de azul escuro da imagem */
+  padding: 8px 16px;
+  font-family: 'Trade Winds', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 15px;         /* tamanho maior só no Samples */
+  border-color: #4b028f;   /* cor da linha específica */
+  color: #ffffff;          /* cor do texto específica (exemplo em azul claro) */
+  margin-left: 17px; /* aumenta o espaçamento à esquerda */
+
+}
+
+.nav-item.tomebpm:hover {
+  background-color: #4b028f;
+  color: white;
+}
+.nav-item.conversaopramidi {
+  border: 2px solid #bd4209; /* tom de azul escuro da imagem */
+  padding: 8px 16px;
+  font-family: 'Trade Winds', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 15px;         /* tamanho maior só no Samples */
+  border-color: #bd4209;   /* cor da linha específica */
+  color: #ffffff;          /* cor do texto específica (exemplo em azul claro) */
+  margin-left: 17px; /* aumenta o espaçamento à esquerda */
+
+}
+
+.nav-item.conversaopramidi:hover {
+  background-color: #bd4209;
+  color: white;
+}
+.language-selector {
+  position: fixed;
+  top: 31px;
+  right: 350px;
+  z-index: 1000;
+}
+#languageSwitcher {
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 10px;
+  font-family: 'Turret Road', sans-serif;
+  cursor: pointer;
+  font-size: 15px;
+}
+/* Avatar do usuário */
+#userAvatar {
+  width:39px;
+  height:45px;
+  border-radius:50%;
+  background:#07632a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#000000;
+  font-weight:bold;
+  cursor:default;
+  font-family: 'Turret Road', sans-serif !important;
+  
+}
+
+/* Botão de logout */
+/* botão na top-bar */
+.login-button {
+  padding: 10px 30px;
+  cursor: pointer;
+  background-color: #000000;
+  color: #fff;
+  font-family: 'Turret Road', sans-serif;
+  border: 2px solid #07723d;
+  border-radius: 5px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  margin-left: 23px; 
+  font-size: 18px;
+}
+.login-button:hover {
+  background-color: #0a6839;  /* muda fundo para verde ao passar mouse */
+  color: #000;                /* texto fica preto */
+  border-color: #09552f;      /* borda continua verde */
+}
+/* modal */
+.modal {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #111;
+  padding: 25px;
+  border-radius: 10px;
+  color: #ffffff;
+  width: 350px;
+  text-align: center;
+  font-family: 'Turret Road', sans-serif !important;
+  font-size: 20px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.modal-content button {
+ padding: 10px 20px;
+  border-radius: 6px;
+  border: 2px solid #064727; /* borda verde */
+  background-color: #0b6125; /* verde escuro */
+  color: #000; /* letras pretas */
+  font-family: 'Turret Road', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close {
+  color: #69726a;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+.modal-content input {
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #1c814fc9; /* borda verde */
+  background-color: #035221; /* verde escuro */
+  color: #000; /* letras pretas */
+  font-size: 14px;
+  font-family: 'Turret Road', sans-serif;
+  transition: all 0.3s ease;
+}
+.modal-content button:hover {
+  background-color: #06641d8e; /* verde claro */
+  color: #000;
+  border-color: #05773e;
+}
+.modal-content input::placeholder {
+  color: #000;
+  opacity: 1;
+}
+.login-error {
+  color: #056d2d;
+  font-size: 16px;
+  margin-top: 10px;
+  display: none; /* escondido por padrão */
+  font-family: 'Turret Road', sans-serif !important;
+}
+#logoutBtn {
+  background-color: #088833; /* verde */
+  color: #000; /* letra preta */
+  font-family: 'Turret Road', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#logoutBtn:hover {
+  background-color: #09793b; /* verde mais claro ao passar o mouse */
+}

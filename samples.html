@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samples</title>
+   <!-- Fontes específicas -->
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="samples.css">
+  <link rel="icon" type="image/png" href="favicon azul sem fundo.png">
+  <style>.logo {
+    cursor: pointer;
+  }
+  
+    body {
+      margin: 0;
+      background-color: white;
+      font-family: 'Trade Winds', system-ui, sans-serif;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 600px;
+      text-align: center;
+    }
+  </style>
+<body class="samples-page"> 
+    <div class="top-bar">
+        <a href="index.html" class="logo-link">
+      <img src="logo tema azul.png" alt="Logo" class="logo" onclick="window.location.href='index.html'">
+     
+  
+      <a href="substancias.html" class="nav-item substancias">SUBSTÂNCIAS</a>
+      
+      <div class="nav-item samples-static">SAMPLES</div>
+      <!-- <a href="tomebpm.html" class="nav-item tomebpm">TOM E BPM</a> -->
+<!-- <a href="conversaopramidi.html" class="nav-item conversaopramidi">CONVERSÃO PRA .MIDI</a> -->
+ <!-- Espaço do usuário logado -->
+  <!-- Espaço do usuário -->
+<div id="userDisplay" style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+    <button id="loginBtn" class="login-button">LOGIN</button>
+  </div>
+</div>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>LOGIN</h2>
+    <input type="email" id="emailInput" placeholder="Digite seu email">
+    <button id="submitLogin">ENTRAR</button>
+    <p class="login-error" id="loginError">Por favor, digite seu email!</p>
+  </div>
+
+      
+  
+    </div>
+
+    <section class="beat-section">
+      <h2 class="section-title glow-title"><span class="Turret Road">SAMPLES</span></h2>
+
+  
+      <div class="beat-grid">
+        <!-- Card 1 -->
+        <div class="beat-card" onmouseenter="playBeat('beat1')" onmouseleave="pauseBeat('beat1')">
+          <span class="beat-name">Guitar</span>
+          <div id="wave1" class="waveform"></div>
+          <span class="credit">by The Big RH</span>
+          <button onclick="showLicenseModal('sample guitar 1 @TheBigRH.wav')" class="download-button">⬇</button>
+          <audio id="beat1" src="sample guitar 1 @TheBigRH.mp3"></audio>
+        </div>
+      
+        <!-- Card 2 -->
+        <div class="beat-card" onmouseenter="playBeat('beat2')" onmouseleave="pauseBeat('beat2')">
+          <span class="beat-name">Piano</span>
+          <div id="wave2" class="waveform"></div>
+          <span class="credit">by The Big RH</span>
+          <button onclick="showLicenseModal('sample piano 2 @TheBigRH.wav')" class="download-button">⬇</button>
+          <audio id="beat2" src="sample piano 2 @TheBigRH.mp3"></audio>
+        </div>
+      
+        <!-- Card 3 -->
+        <div class="beat-card" onmouseenter="playBeat('beat3')" onmouseleave="pauseBeat('beat3')">
+          <span class="beat-name">Guitar</span>
+          <div id="wave3" class="waveform"></div>
+          <span class="credit">by The Big RH</span>
+          <button onclick="showLicenseModal('sample guitar 3 @TheBigRH.wav')" class="download-button">⬇</button>
+          <audio id="beat3" src="sample guitar 3 @TheBigRH.mp3"></audio>
+        </div>
+      </div>
+      
+    </section>
+  
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+     <div class="beat-grid2">
+        <!-- Card 4 -->
+        <div class="beat-card2" onmouseenter="playBeat('beat4')" onmouseleave="pauseBeat('beat4')">
+          <span class="beat-name">Guitar</span>
+          <div id="wave4" class="waveform"></div>
+          <span class="credit">by The Big RH</span>
+          <button onclick="showLicenseModal('sample guitar 4 @TheBigRH.wav')" class="download-button">⬇</button>
+          <audio id="beat4" src="sample guitar 4 @TheBigRH.mp3"></audio>
+        </div>
+      
+        <!-- Card 5 -->
+        <div class="beat-card2" onmouseenter="playBeat('beat5')" onmouseleave="pauseBeat('beat5')">
+          <span class="beat-name">Pad</span>
+          <div id="wave5" class="waveform"></div>
+          <span class="credit">by The Real TXR</span>
+          <button onclick="showLicenseModal('sample pad 5 @TheRealTXR.wav')" class="download-button">⬇</button>
+          <audio id="beat5" src="sample pad 5 @TheRealTXR.mp3"></audio>
+        </div>
+      
+        <!-- Card 6 -->
+        <div class="beat-card2" onmouseenter="playBeat('beat6')" onmouseleave="pauseBeat('beat6')">
+          <span class="beat-name">Piano</span>
+          <div id="wave6" class="waveform"></div>
+          <span class="credit">by The Real TXR</span>
+          <button onclick="showLicenseModal('sample piano 6 @TheRealTXR.wav')" class="download-button">⬇</button>
+          <audio id="beat6" src="sample piano 6 @TheRealTXR.mp3"></audio>
+        </div>
+      </div>
+      
+    </section>
+  
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script>
+    const waves = [];
+  
+    function createWave(id, audioId) {
+      const wave = WaveSurfer.create({
+        container: `#${id}`,
+        waveColor: '#0e0599c0',        // verde escuro (ondas)
+        progressColor: '#002efa',    // verde mais claro (barra de progresso)
+        height: 60,
+        barWidth: 2,
+        responsive: true,
+        interact: false,
+        cursorColor: '#002efa',      // cor da linha vertical (cursor)
+        cursorWidth: 2,
+        normalize: true,
+        media: document.getElementById(audioId)
+      });
+  
+      wave.load(document.getElementById(audioId));
+      waves.push({ id: audioId, wave });
+    }
+  
+    function playBeat(id) {
+      const w = waves.find(w => w.id === id);
+      if (w) w.wave.play();
+    }
+  
+    function pauseBeat(id) {
+      const w = waves.find(w => w.id === id);
+      if (w) w.wave.pause();
+    }
+  
+    window.onload = () => {
+      createWave('wave1', 'beat1');
+      createWave('wave2', 'beat2');
+      createWave('wave3', 'beat3');
+      createWave('wave4', 'beat4');
+      createWave('wave5', 'beat5');
+      createWave('wave6', 'beat6');
+    };
+  </script>
+  <footer  class="site-footerafro">
+  <div class="footer-contentafro">
+    <div class="soundwave-icon2">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+    <div class="footer-column2">
+      <h3 class="footer-title2">TXR World</h3>
+      <ul class="footer-links2">
+        <li><a href="/privacidade.html">Política de Privacidade</a></li>
+        <li><a href="/cookies.html">Política de Cookies</a></li>
+        <li><a href="/termos.html">Termos de Serviço</a></li>
+      </ul>
+    </div>
+    <div class="footer-separator2"></div>
+    <div class="footer-column2">
+      
+      <h3 class="footer-title3">Contato:</h3>
+      <p class="footer-contact2">therealtxr@gmail.com</p>
+      <a href="https://www.instagram.com/joelltxr/" target="_blank">
+        <img src="insta3.png" alt="Instagram" class="instagram-icon2">
+      </a>
+    </div>
+  </div>
+
+    </div>
+    <p class="footer-left2">&copy; 2025 TXR World. Todos os direitos reservados.</p>
+  </div>
+  
+  </div>
+</footer>
+<div id="license-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <h2>Termo de Uso de Samples</h2>
+    <div class="license-text">
+      <!-- Insira o texto dos termos aqui (resumido ou com scroll) -->
+      <p><strong>1. LICENÇA DE USO</strong><br>
+      Ao baixar qualquer sample disponibilizado, o usuário recebe uma licença não exclusiva, intransferível e revogável para usá-lo em composições musicais, remixes ou trilhas sonoras.
+      </p><strong>2. USO COMERCIAL PERMITIDO</strong><br>
+      O sample pode ser usado em projetos comerciais (álbuns, singles, vídeos, etc.), desde que modificado ou incluído em uma composição maior.
+      </p><strong>3. PROIBIÇÕES</strong><br>
+      Não é permitido revender, redistribuir ou disponibilizar os samples de forma isolada (ex: subir pra outro site, criar um sample pack, etc.)
+
+Não é permitido registrar obras que utilizem o sample de forma isolada como se fossem originais.
+
+
+      </p><strong>4. DISPOSIÇÕES GERAIS</strong><br>
+      O uso contínuo implica aceitação deste termo, que pode ser atualizado sem aviso prévio. Em caso de dúvidas ou solicitações, contate: therealtxr@gmail.com
+      
+      <!-- você pode continuar o resto ou aplicar um scroll -->
+    </div>
+    <label><input type="checkbox" id="agree-checkbox"> Concordo com os termos</label>
+    <div style="margin-top: 15px;">
+      <div class="button-group">
+      <button class="custom-button" onclick="startDownload()">Download</button>
+  <button class="custom-button" onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+<script>
+  let downloadUrl = '';
+
+  function showLicenseModal(url) {
+    downloadUrl = url;
+    document.getElementById('license-modal').style.display = 'flex';
+    document.getElementById('agree-checkbox').checked = false;
+  }
+
+  function closeModal() {
+    document.getElementById('license-modal').style.display = 'none';
+  }
+
+  // função de verificação de login
+  function isLoggedIn() {
+    return !!localStorage.getItem('userEmail');
+  }
+
+  function startDownload() {
+    const checkbox = document.getElementById('agree-checkbox');
+
+    // 1️⃣ se não estiver logado, mostrar o modal de login
+    if (!isLoggedIn()) {
+      closeModal();
+      const loginModal = document.getElementById('login-modal');
+      if (loginModal) loginModal.style.display = 'flex';
+      alert("Você precisa estar logado para baixar o arquivo.");
+      return;
+    }
+
+    // 2️⃣ se não aceitou os termos, avisar
+    if (!checkbox.checked) {
+      alert("Você precisa aceitar os termos para fazer o download.");
+      return;
+    }
+
+    // 3️⃣ se tudo ok, iniciar o download
+    closeModal();
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+<script src="login.js"></script>

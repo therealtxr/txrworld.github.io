@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Substâncias</title>
+  <!-- Fontes específicas -->
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  
+  <link rel="icon" type="image/png" href="favicon2.png">
+  <style>.logo {
+    cursor: pointer;
+  }
+  
+    body {
+      margin: 0;
+      background-color: white;
+      font-family: 'Trade Winds', system-ui, sans-serif;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* <-- aqui */
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 600px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="sub-page"> 
+  <div class="top-bar">
+    <img src="logosemfundo.jpg.png" alt="Logo" class="logo" onclick="window.location.href='index.html'">
+    <div class="nav-item substancias-static">SUBSTÂNCIAS</div>
+
+    <a href="samples.html" class="nav-item samples">SAMPLES</a>
+     <!-- <a href="tomebpm.html" class="nav-item tomebpm">TOM E BPM</a> -->
+<!-- <a href="conversaopramidi.html" class="nav-item conversaopramidi">CONVERSÃO PRA .MIDI</a> -->
+<div id="userDisplay" style="margin-left:auto; display:flex; align-items:center; gap:10px;">
+    <button id="loginBtn" class="login-button">LOGIN</button>
+  </div>
+</div>
+
+<!-- Modal de login -->
+<div id="loginModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>LOGIN</h2>
+    <input type="email" id="emailInput" placeholder="Digite seu email">
+    <button id="submitLogin">ENTRAR</button>
+    <p class="login-error" id="loginError">Por favor, digite seu email!</p>
+  </div>
+</div>
+
+  
+</div>
+ 
+
+  </div>
+
+  <section class="beat-section">
+    <h2 class="section-title"><span class="tradewinds">R&amp;B</span></h2>
+
+    <div class="beat-grid">
+      <!-- Card 1 -->
+      <div class="beat-card" onmouseenter="playBeat('beat1')" onmouseleave="pauseBeat('beat1')">
+        <span class="beat-name">Me and You</span>
+        <div id="wave1" class="waveform"></div>
+        <span class="credit">by The Real TXR</span>
+        <button onclick="showLicenseModal('Me and You.wav')" class="download-button">⬇</button>
+        <audio id="beat1" src="Me and You previa.mp3"></audio>
+      </div>
+    
+      <!-- Card 2 -->
+      <div class="beat-card" onmouseenter="playBeat('beat2')" onmouseleave="pauseBeat('beat2')">
+        <span class="beat-name">Simple Things</span>
+        <div id="wave2" class="waveform"></div>
+        <span class="credit">by The Real TXR</span>
+        <button onclick="showLicenseModal('Simple Things.wav')" class="download-button">⬇</button>
+        <audio id="beat2" src="Simple Things previa.mp3"></audio>
+      </div>
+    
+      <!-- Card 3 -->
+      <div class="beat-card" onmouseenter="playBeat('beat3')" onmouseleave="pauseBeat('beat3')">
+        <span class="beat-name">Aurora</span>
+        <div id="wave3" class="waveform"></div>
+        <span class="credit">by The Real TXR</span>
+        <button onclick="showLicenseModal('Aurora.wav')" class="download-button">⬇</button>
+        <audio id="beat3" src="Aurora.mp3"></audio>
+      </div>
+    </div>
+    
+  </section>
+
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+<script>
+  const waves = [];
+
+  function createWave(id, audioId) {
+    const wave = WaveSurfer.create({
+      container: `#${id}`,
+      waveColor: '#004d26',        // verde escuro (ondas)
+      progressColor: '#00cc66',    // verde mais claro (barra de progresso)
+      height: 60,
+      barWidth: 2,
+      responsive: true,
+      interact: false,
+      cursorColor: '#00ff99',      // cor da linha vertical (cursor)
+      cursorWidth: 2,
+      normalize: true,
+      media: document.getElementById(audioId)
+    });
+
+    wave.load(document.getElementById(audioId));
+    waves.push({ id: audioId, wave });
+  }
+
+  function playBeat(id) {
+    const w = waves.find(w => w.id === id);
+    if (w) w.wave.play();
+  }
+
+  function pauseBeat(id) {
+    const w = waves.find(w => w.id === id);
+    if (w) w.wave.pause();
+  }
+
+  window.onload = () => {
+    createWave('wave1', 'beat1');
+    createWave('wave2', 'beat2');
+    createWave('wave3', 'beat3');
+    // TRAP
+    createWave('wave4', 'beat4');
+    createWave('wave5', 'beat5');
+    createWave('wave6', 'beat6');
+     // AFRO
+    createWave('wave7', 'beat7');
+    createWave('wave8', 'beat8');
+    createWave('wave9', 'beat9');
+  };
+</script>
+<!-- Seção TRAP -->
+
+
+<section class="sectiontrap">
+  <h2 class="section-title2"><span class="tradewinds">TRAP</span></h2>
+
+  <div class="beat-gridtrap">
+    <!-- Card 4 -->
+    <div class="beat-card2" onmouseenter="playBeat('beat4')" onmouseleave="pauseBeat('beat4')">
+      <span class="beat-name">Arcade</span>
+      <div id="wave4" class="waveform"></div>
+      <span class="credit">by The Real TXR</span>
+      <button onclick="showLicenseModal('Arcade.wav')" class="download-button">⬇</button>
+      <audio id="beat4" src="Arcade.mp3"></audio>
+    </div>
+  
+    <!-- Card 5 -->
+    <div class="beat-card2" onmouseenter="playBeat('beat5')" onmouseleave="pauseBeat('beat5')">
+      <span class="beat-name">Party</span>
+      <div id="wave5" class="waveform"></div>
+      <span class="credit">by The Real TXR</span>
+      <button onclick="showLicenseModal('Party.wav')" class="download-button">⬇</button>
+      <audio id="beat5" src="Party.mp3"></audio>
+    </div>
+  
+    <!-- Card 6 -->
+    <div class="beat-card2" onmouseenter="playBeat('beat6')" onmouseleave="pauseBeat('beat6')">
+      <span class="beat-name">Panther</span>
+      <div id="wave6" class="waveform"></div>
+      <span class="credit">by The Real TXR</span>
+      <button onclick="showLicenseModal('Panther.wav')" class="download-button">⬇</button>
+      <audio id="beat6" src="Panther.mp3"></audio>
+    </div>
+  </div>
+  
+</section>
+<script src="https://unpkg.com/wavesurfer.js"></script>
+
+<!-- Seção AFRO -->
+
+
+<section class="sectionafro">
+  <h2 class="section-title3"><span class="tradewinds">AFRO</span></h2>
+
+  <div class="beat-gridafro">
+    <!-- Card 7 -->
+    <div class="beat-card3" onmouseenter="playBeat('beat7')" onmouseleave="pauseBeat('beat7')">
+      <span class="beat-name">Seaside</span>
+      <div id="wave7" class="waveform"></div>
+      <span class="credit">by The Real TXR</span>
+      <button onclick="showLicenseModal('Seaside.wav')" class="download-button">⬇</button>
+      <audio id="beat7" src="Seaside previa.mp3"></audio>
+    </div>
+  
+    <!-- Card 8 -->
+    <div class="beat-card3" onmouseenter="playBeat('beat8')" onmouseleave="pauseBeat('beat8')">
+      <span class="beat-name">Small Moments</span>
+      <div id="wave8" class="waveform"></div>
+      <span class="credit">by The Real TXR</span>
+      <button onclick="showLicenseModal('Small Moments.wav')" class="download-button">⬇</button>
+      <audio id="beat8" src="Small Moments.mp3"></audio>
+    </div>
+  
+    <!-- Card 9 -->
+    <div class="beat-card3" onmouseenter="playBeat('beat9')" onmouseleave="pauseBeat('beat9')">
+      <span class="beat-name">Your Eyes</span>
+      <div id="wave9" class="waveform"></div>
+      <span class="credit">by The Real TXR</span>
+      <button onclick="showLicenseModal('Your Eyes.wav')" class="download-button">⬇</button>
+      <audio id="beat9" src="Your Eyes.mp3"></audio>
+    </div>
+  </div>
+  
+</section>
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<div id="license-modal" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <h2>Termo de Licença Gratuita</h2>
+    <div class="license-text">
+      <!-- Insira o texto dos termos aqui (resumido ou com scroll) -->
+      <p><strong>1. LICENÇA E PERMISSÃO DE USO</strong><br>
+      Ao efetuar o download gratuito de qualquer beat disponibilizado no site TXR World, o usuário (doravante denominado “licenciado”) recebe uma licença não exclusiva, intransferível e revogável para utilizar o instrumental com fins comerciais ou não comerciais, incluindo o lançamento de faixas em plataformas digitais de streaming (tais como Spotify, Apple Music, YouTube, Deezer, entre outras).
+      </p><strong>2. OBRIGAÇÕES DO LICENCIADO</strong><br>
+      O licenciado compromete-se a respeitar os termos desta licença e não poderá declarar a produção do beat como própria. Os instrumentais permanecem sendo propriedade intelectual do produtor original, identificado no próprio site.
+      </p><strong>3. RESTRIÇÕES E PENALIDADES</strong><br>
+      O descumprimento deste termo poderá acarretar:
+
+A remoção da faixa das plataformas de distribuição, mediante solicitação do produtor;
+
+A revogação imediata da licença de uso;
+
+A tomada de medidas legais cabíveis, inclusive judiciais, por uso indevido de propriedade intelectual.
+      </p><strong>4. LICENÇA EXCLUSIVA</strong><br>
+      Se o licenciado desejar obter os direitos exclusivos de uso de um instrumental (impedindo que terceiros o utilizem), deverá entrar em contato com o produtor para negociação direta através do e-mail:
+
+therealtxr@gmail.com .
+
+Após o acordo, será emitido um contrato específico detalhando os termos da exclusividade.
+      </p><strong>5. DISPOSIÇÕES GERAIS</strong><br>
+      Este termo poderá ser atualizado sem aviso prévio.
+
+O uso contínuo dos beats implica aceitação automática da versão vigente deste termo.
+
+Todos os beats disponibilizados atualmente são produzidos por Joel Da Silva Teixeira, também conhecido como The Real TXR, podendo haver colaborações com outros produtores futuramente.
+      <!-- você pode continuar o resto ou aplicar um scroll -->
+    </div>
+    <label><input type="checkbox" id="agree-checkbox"> Concordo com os termos</label>
+    <div style="margin-top: 15px;">
+      <button onclick="startDownload()">Download</button>
+      <button onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+<script>
+  let downloadUrl = '';
+
+  function showLicenseModal(url) {
+    downloadUrl = url;
+    document.getElementById('license-modal').style.display = 'flex';
+    document.getElementById('agree-checkbox').checked = false;
+  }
+
+  function closeModal() {
+    document.getElementById('license-modal').style.display = 'none';
+  }
+
+  // função de verificação de login
+  function isLoggedIn() {
+    return !!localStorage.getItem('userEmail');
+  }
+
+  function startDownload() {
+    const checkbox = document.getElementById('agree-checkbox');
+
+    // 1️⃣ se não estiver logado, mostrar o modal de login
+    if (!isLoggedIn()) {
+      closeModal();
+      const loginModal = document.getElementById('login-modal');
+      if (loginModal) loginModal.style.display = 'flex';
+      alert("Você precisa estar logado para baixar o arquivo.");
+      return;
+    }
+
+    // 2️⃣ se não aceitou os termos, avisar
+    if (!checkbox.checked) {
+      alert("Você precisa aceitar os termos para fazer o download.");
+      return;
+    }
+
+    // 3️⃣ se tudo ok, iniciar o download
+    closeModal();
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+
+
+<footer  class="site-footerafro">
+  <div class="footer-contentafro">
+    <div class="soundwave-icon2">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+    <div class="footer-column2">
+      <h3 class="footer-title2">TXR World</h3>
+      <ul class="footer-links2">
+        <li><a href="/privacidade.html">Política de Privacidade</a></li>
+        <li><a href="/cookies.html">Política de Cookies</a></li>
+        <li><a href="/termos.html">Termos de Serviço</a></li>
+      </ul>
+    </div>
+    <div class="footer-separator2"></div>
+    <div class="footer-column2">
+      
+      <h3 class="footer-title3">Contato:</h3>
+      <p class="footer-contact2">therealtxr@gmail.com</p>
+      <a href="https://www.instagram.com/joelltxr/" target="_blank">
+        <img src="insta3.png" alt="Instagram" class="instagram-icon2">
+      </a>
+    </div>
+  </div>
+
+    </div>
+    <p class="footer-left">&copy; 2025 TXR World. Todos os direitos reservados.</p>
+  </div>
+  
+  </div>
+</footer>
+<script src="login.js"></script>
